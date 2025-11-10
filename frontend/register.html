@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register — FeedNBounce</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <div class="brand">Feed<span style="color:#ffd28a;">NBounce</span></div>
+    <li><a href="index.html">HOME</a></li>
+  </nav>
+
+  <main>
+    <section class="page active">
+      <h2 style="text-align:center;">Create an Account</h2>
+      <form id="registerForm">
+        <input id="reg_name" type="text" placeholder="Full Name" required>
+        <input id="reg_email" type="email" placeholder="Email" required>
+        <input id="reg_password" type="password" placeholder="Password" required>
+        <select id="reg_role" required>
+          <option value="" disabled selected>Select Role</option>
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+        </select>
+        <button type="submit">Register</button>
+      </form>
+      <p class="switch-link" onclick="window.location.href='login.html'">Already have an account? Login</p>
+    </section>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

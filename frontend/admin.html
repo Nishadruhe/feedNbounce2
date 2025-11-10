@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — FeedNBounce</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <nav>
+    <div class="brand">Feed<span style="color:#ffd28a;">NBounce</span></div>
+    <ul>
+      <li><a href="admin.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+      <li><button id="logoutBtn" class="cta-btn"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="admin-dashboard">
+      <!-- Header Section -->
+      <div class="dashboard-header">
+        <div class="header-content">
+          <h1><i class="fas fa-tachometer-alt"></i> Admin Dashboard</h1>
+          <p>Monitor feedback trends and user engagement</p>
+        </div>
+        <div class="header-actions">
+          <button class="refresh-btn" onclick="loadAdminDashboard()">
+            <i class="fas fa-sync-alt"></i> Refresh
+          </button>
+          <div class="date-info">
+            <i class="fas fa-calendar"></i>
+            <span id="currentDate"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card total-feedback">
+          <div class="stat-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <div class="stat-content">
+            <h3 id="totalFeedbacks">0</h3>
+            <p>Total Feedback</p>
+            <div class="stat-trend">+12% from last week</div>
+          </div>
+        </div>
+        
+        <div class="stat-card positive-feedback">
+          <div class="stat-icon">
+            <i class="fas fa-smile"></i>
+          </div>
+          <div class="stat-content">
+            <h3 id="positiveCount">0</h3>
+            <p>Positive</p>
+            <div class="stat-percentage" id="positivePercent">0%</div>
+          </div>
+        </div>
+        
+        <div class="stat-card neutral-feedback">
+          <div class="stat-icon">
+            <i class="fas fa-meh"></i>
+          </div>
+          <div class="stat-content">
+            <h3 id="neutralCount">0</h3>
+            <p>Neutral</p>
+            <div class="stat-percentage" id="neutralPercent">0%</div>
+          </div>
+        </div>
+        
+        <div class="stat-card negative-feedback">
+          <div class="stat-icon">
+            <i class="fas fa-frown"></i>
+          </div>
+          <div class="stat-content">
+            <h3 id="negativeCount">0</h3>
+            <p>Negative</p>
+            <div class="stat-percentage" id="negativePercent">0%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Section -->
+      <div class="charts-section">
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3><i class="fas fa-chart-pie"></i> Sentiment Analysis</h3>
+            <div class="chart-controls">
+              <button class="chart-btn active" data-chart="pie">Pie</button>
+              <button class="chart-btn" data-chart="bar">Bar</button>
+              <button class="chart-btn" data-chart="doughnut">Doughnut</button>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chartSentiment"></canvas>
+          </div>
+        </div>
+        
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3><i class="fas fa-chart-bar"></i> Category Breakdown</h3>
+          </div>
+          <div class="chart-container">
+            <canvas id="categoryChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Feedback Section -->
+      <div class="recent-feedback-section">
+        <div class="section-header">
+          <h3><i class="fas fa-clock"></i> Recent Feedback</h3>
+          <div class="filter-tabs">
+            <button class="tab-btn active" data-filter="all">All</button>
+            <button class="tab-btn" data-filter="positive">Positive</button>
+            <button class="tab-btn" data-filter="negative">Negative</button>
+            <button class="tab-btn" data-filter="neutral">Neutral</button>
+          </div>
+        </div>
+        
+        <div class="feedback-grid" id="adminFeedbackGrid">
+          <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading feedback...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

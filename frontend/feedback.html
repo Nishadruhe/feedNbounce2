@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Feedback — FeedNBounce</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <div class="brand">Feed<span style="color:#ffd28a;">NBounce</span></div>
+    <ul id="navLinks">
+      <li><a href="history.html">History</a></li>
+      <li><button id="logoutBtn" class="cta-btn">Logout</button></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="page active">
+      <h1 style="text-align:center; color:#6b3edc;">Submit Feedback</h1>
+      
+      <div id="userTypeSelector" style="text-align:center; margin-bottom:2rem;">
+        <button id="guestBtn" class="user-type-btn active">Submit as Guest</button>
+        <button id="userBtn" class="user-type-btn">Submit as Registered User</button>
+      </div>
+
+      <form id="feedbackForm" style="max-width:720px; margin:auto;">
+        <label for="categorySelect" style="font-weight:600;">Category</label>
+        <select id="categorySelect" required>
+          <option value="" disabled selected>Select Category</option>
+          <option value="product">Product</option>
+          <option value="service">Service</option>
+        </select>
+
+        <label for="itemSelect" style="font-weight:600;">Item / Service</label>
+        <select id="itemSelect" required>
+          <option value="" disabled selected>Select Category First</option>
+        </select>
+
+        <label for="messageInput" style="font-weight:600;">Feedback</label>
+        <textarea id="messageInput" placeholder="Write your feedback here..." required></textarea>
+
+        <div style="display:flex; gap:12px; align-items:center;">
+          <button type="button" id="submitFeedback">Submit Feedback</button>
+          <div id="feedbackStatus" class="muted"></div>
+        </div>
+      </form>
+      
+      <div id="loginPrompt" style="text-align:center; margin-top:2rem; display:none;">
+        <p>Please <a href="login.html">login</a> to submit feedback as a registered user.</p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

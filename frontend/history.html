@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback History — FeedNBounce</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="brand">Feed<span style="color:#ffd28a;">NBounce</span></div>
+    <ul>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><button id="logoutBtn" class="cta-btn">Logout</button></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="history-page">
+      <div class="page-header">
+        <h1><i class="fas fa-history"></i> Your Feedback Journey</h1>
+        <p>Track your feedback and see your impact</p>
+      </div>
+      
+      <div class="quick-stats">
+        <div class="stat-box">
+          <div class="stat-number" id="totalCount">0</div>
+          <div class="stat-label">Total Feedback</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number" id="positiveCount">0</div>
+          <div class="stat-label">Positive</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number" id="negativeCount">0</div>
+          <div class="stat-label">Negative</div>
+        </div>
+      </div>
+      
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="product">Products</button>
+        <button class="filter-btn" data-filter="service">Services</button>
+        <button class="filter-btn" data-filter="positive">Positive</button>
+        <button class="filter-btn" data-filter="negative">Negative</button>
+      </div>
+      
+      <div id="historyList" class="feedback-timeline">
+        <div class="loading-state">
+          <i class="fas fa-spinner fa-spin"></i>
+          <p>Loading your feedback...</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
