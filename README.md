@@ -1,6 +1,6 @@
 # feedNbounce2
 A full-stack web application for collecting and analyzing user feedback with real-time analytics
-# **FeedNBounce - Sentimental Feedback System** 📊
+# **FeedNBounce - Smart Feedback and Analysis System** 📊
 
 ![Node.js](https://img.shields.io/badge/Node.js-18.x-green)
 ![MongoDB](https://img.shields.io/badge/MongoDB-5.0+-blue)
